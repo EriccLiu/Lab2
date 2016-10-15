@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="user" namespace="/" extends="struts-default">
+	
+		<action name="welcome">
+			<result>/Welcome.jsp</result>
+		</action>
+		
+		<action name="login" class="com.lyx.action.BookActionLogin">
+			<result name="valid">/HomePage.jsp</result>
+			<result name="invalid">/Welcome.jsp</result>
+		</action>
+		
+		<action name="showBookInformation" class="com.lyx.action.BookActionQueryByTitle">
+			<result name="success">/BookInformation.jsp</result>
+			<result name="failure">/FailureAlert.jsp</result>
+		</action>
+		
+		<action name="showAuthorInformation" class="com.lyx.action.BookActionQueryByAuthor">
+			<result name="success">/AuthorInformation.jsp</result>
+			<result name="failure">/FailureAlert.jsp</result>
+		</action>
+		
+		<action name="showLibrary" class="com.lyx.action.BookActionShowLibrary">
+			<result name="success">/LibraryInformation.jsp</result>
+			<result name="failure">/FailureAlert.jsp</result>
+		</action>
+		
+		<action name="createBook" class="com.lyx.action.BookActionInsert">
+			<result name="success">/HomePage.jsp</result>
+			<result name="no author">/CreateAuthor.jsp</result>
+			<result name="failure">/FailureAlert.jsp</result>
+		</action>
+		
+		<action name="createAuthor" class="com.lyx.action.BookActionCreateAuthor">
+			<result name="success" type="redirect">UpdateAuthorID.action?Title=${Title}&amp;Name=${Name}</result>
+			<result name="failure">/FailureAlert.jsp</result>
+		</action>
+		
+		<action name="Delete" class="com.lyx.action.BookActionDelete">
+			<result type="redirect">showLibrary.action</result>
+		</action>
+		
+		<action name="Update" class="com.lyx.action.BookActionUpdate">
+			<result name="no author">/CreateAuthor.jsp</result>
+			<result name="success" type="redirect">showLibrary.action</result>
+			<result name="failure">/FailureAlert.jsp</result>
+		</action>
+		
+		<action name="UpdateAuthorID" class="com.lyx.action.BookActionUpdateAuthorID">
+			<result type="redirect">showLibrary.action</result>
+		</action>
+		
+	</package>
+	
+</struts> 
