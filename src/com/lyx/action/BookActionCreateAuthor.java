@@ -1,6 +1,6 @@
 package com.lyx.action;
 
-//Lab3-modification-4
+//Lab3-modification
 
 //用户可新增一本图书，若该作者不在库中，还需增加新作者
 public class BookActionCreateAuthor extends BookAction{

@@ -1,6 +1,6 @@
 package com.lyx.action;
 
-//Lab3-modification-1
+//Lab3-modification
 
 public class Author {
 	

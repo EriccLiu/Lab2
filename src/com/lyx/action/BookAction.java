@@ -1,6 +1,6 @@
 package com.lyx.action;
 
-//Lab3-modification-3
+//Lab3-modification
 
 import java.util.Date;
 

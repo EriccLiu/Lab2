@@ -1,6 +1,6 @@
 package com.lyx.action;
 
-//Lab3-modification-5
+//Lab3-modification
 
 //当用户点击删除时，将对映的图书从数据表中删除
 public class BookActionDelete extends BookAction {
